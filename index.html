@@ -124,6 +124,7 @@
             top: -52px;
             left: -9px;
         }
+
         .image-top1 {
             width: 50px;
             position: relative;
@@ -155,30 +156,37 @@
             padding: 23px 122px;
             justify-content: space-evenly;
         }
-        .footer ul{
+
+        .footer ul {
             list-style: none;
         }
-        .footer a{
+
+        .footer a {
             text-decoration: none;
             color: white;
         }
-        .footer a:hover{
+
+        .footer a:hover {
             color: rgb(100, 239, 126);
             font-size: 1.02rem;
         }
-        .rights{
+
+        .rights {
             display: flex;
             justify-content: end;
             margin-right: 30px;
         }
-        .rights a{
+
+        .rights a {
             text-decoration: none;
             color: white;
         }
-        .rights a:hover{
+
+        .rights a:hover {
             color: rgb(101, 79, 145);
         }
-        .btn1{
+
+        .btn1 {
             width: 200px;
             border-width: 4px;
         }
@@ -188,7 +196,9 @@
 <body>
     <header>
         <nav>
-            <div class="left"><bold>Supriyo Das</bold></div>
+            <div class="left">
+                <bold>Supriyo Das</bold>
+            </div>
             <div class="right">
                 <ul>
                     <li><a href="/index.html">Home</a></li>
@@ -207,8 +217,10 @@
                 Hi, My name is <span class="purple"><b>Supriyo</b></span>
                 <div>I am a passionate</div>
                 <div><span id="element"></span></div>
-                <button type="button" name="" id="" class="btn btn-outline-primary btn1" btn-lg btn-block>Download Resume</button>
-                <button type="button" name="" id="" class="btn btn-outline-primary btn1" btn-lg btn-block>Visit GitHub</button>
+                <button onclick="downloadFile()" type="button" name="" id="" class="btn btn-outline-primary btn1" btn-lg
+                    btn-block>Download Resume</button>
+                <button onclick="window.open('https://github.com/sanu151', '_blank');" type="button" name="" id="" class="btn btn-outline-primary btn1" btn-lg btn-block>Visit
+                    GitHub</button>
             </div>
             <div class="rightsection">
                 <img src="img1.png" alt="Developer Portfilio">
@@ -284,10 +296,10 @@
             </div>
             <div class="footer-third">
                 <ul>
-                    <li><a href="/">Facebook</a></li>
-                    <li><a href="/">Twiter</a></li>
-                    <li><a href="/">Linkedin</a></li>
-                    <li><a href="/">Whatsapp</a></li>
+                    <li><a href="https://www.facebook.com/Sanu151/" target="_blank">Facebook</a></li>
+                    <li><a href="https://twitter.com/Sanu51" target="_blank">Twiter</a></li>
+                    <li><a href="https://www.linkedin.com/in/supriyo-das-3687241a3/" target="_blank">Linkedin</a></li>
+                    <li><a href="https://wa.me/919932562329" target="_blank">Whatsapp</a></li>
                 </ul>
             </div>
             <div class="footer-fourth">
@@ -304,6 +316,26 @@
             strings: ['Web Developer', 'Data Analist', 'Web Designer'],
             typeSpeed: 50,
         });
+    </script>
+    <script>
+        function downloadFile() {
+            // Replace "path/to/file.pdf" with the actual file path or URL
+            var fileUrl = "/";
+
+            // Create a hidden anchor element
+            var downloadLink = document.createElement("a");
+            downloadLink.href = fileUrl;
+            downloadLink.download = "resume_supriyo.pdf"; // Specify the desired file name
+
+            // Append the anchor element to the document body
+            document.body.appendChild(downloadLink);
+
+            // Trigger the click event on the anchor element
+            downloadLink.click();
+
+            // Clean up
+            document.body.removeChild(downloadLink);
+        }
     </script>
 </body>
 
